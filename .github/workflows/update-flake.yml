@@ -25,6 +25,3 @@ jobs:
         with:
           name: asymmetric
           signingKey: "${{ secrets.CACHIX_SIGNING_KEY }}"
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "[automation] update overlay"
