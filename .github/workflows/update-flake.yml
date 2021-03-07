@@ -1,13 +1,14 @@
-name: Update flake
+name: Update overlay
 
 on:
+  # on demand
   workflow_dispatch:
+  # every fifteen minutes
   schedule:
-    # every fifteen minutes
     - cron: "*/15 * * * *"
 
 jobs:
-  get-latest-polkadot:
+  update-overlay:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,6 +22,7 @@ jobs:
             experimental-features = nix-command flakes
       - run: nix flake update --recreate-lock-file
       - run: ./update.sh
+      - run: nix build -L
       - uses: cachix/cachix-action@v8
         with:
           name: asymmetric
