@@ -3,9 +3,9 @@ name: Update overlay
 on:
   # on demand
   workflow_dispatch:
-  # every fifteen minutes
+  # every hour, at minute 8
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "8 * * * *"
 
 jobs:
   update-overlay:
