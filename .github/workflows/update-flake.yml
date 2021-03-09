@@ -31,10 +31,19 @@ jobs:
           mv latest-version prev-version
           curl -s https://api.github.com/repos/paritytech/polkadot/releases/latest | jq -r .tag_name > latest-version
           cat prev-version latest-version
+          # non-zero if there are differences
           diff prev-version latest-version
       - if: steps.check.outcome == 'failure'
         run: nix flake update --recreate-lock-file
       - if: steps.check.outcome == 'failure'
-        run: ./update.sh
+        name: nix build to save hash
+        run: |
+          echo "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" > hash
+          (set +e; nix build |& tee out)
+          awk '/got: / {print $2}' out > hash
       - if: steps.check.outcome == 'failure'
+        name: build again
         run: nix build -L
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "[automation] update"
