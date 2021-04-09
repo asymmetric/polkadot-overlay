@@ -21,24 +21,24 @@
         name = "polkadot-latest";
         src = polkadot;
       in
-        {
-          polkadot-latest = pkgs.polkadot.overrideAttrs (old: {
-            inherit src name version;
+      {
+        polkadot-latest = pkgs.polkadot.overrideAttrs (old: {
+          inherit src name version;
 
-            cargoDeps = old.cargoDeps.overrideAttrs(_: {
-              inherit src;
+          cargoDeps = old.cargoDeps.overrideAttrs (_: {
+            inherit src;
 
-              name = "${name}-vendor.tar.gz";
-              outputHash = hash;
-            });
+            name = "${name}-vendor.tar.gz";
+            outputHash = hash;
           });
-        };
+        });
+      };
 
     defaultPackage.x86_64-linux =
       let
         pkgs = import nixpkgs { system = "x86_64-linux"; overlays = [ self.overlay ]; };
       in
-        pkgs.polkadot-latest;
+      pkgs.polkadot-latest;
 
   };
 }
