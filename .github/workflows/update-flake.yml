@@ -1,6 +1,7 @@
 name: Update overlay
 
 on:
+  push:
   # on demand
   workflow_dispatch:
   # every hour, at minute 8
