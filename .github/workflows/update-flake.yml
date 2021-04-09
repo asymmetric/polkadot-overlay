@@ -29,8 +29,7 @@ jobs:
       - name: nix build to save hash
         run: |
           echo "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" > hash
-          (set +e; nix build --no-link |& tee out)
-          awk '/got: / {print $2}' out > hash
+          nix build  |& awk '/got: / {print $2}' > hash
       - if: steps.check.outcome == 'failure'
         name: build again
         run: nix build -L --no-link
