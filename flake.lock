@@ -19,15 +19,16 @@
     "polkadot": {
       "flake": false,
       "locked": {
-        "lastModified": 1621517321,
-        "narHash": "sha256-6PIUZ6ae4Q11tHN+fIIfOVxBI7RwIoiUI9pTExUMAEc=",
+        "lastModified": 1620235899,
+        "narHash": "sha256-Y52VFTjRFyC38ZNt6NMtVRA2pn6Y4B/NC4EEuDvIFQQ=",
         "owner": "paritytech",
         "repo": "polkadot",
-        "rev": "41f8909f01c5b25cc345ed27ab680e3fd59cf210",
+        "rev": "b5519e76840c67e96b7cd93e0f304883fb3d340f",
         "type": "github"
       },
       "original": {
         "owner": "paritytech",
+        "ref": "release",
         "repo": "polkadot",
         "type": "github"
       }
