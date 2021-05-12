@@ -2,11 +2,11 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1620374106,
-        "narHash": "sha256-1v3hj48aGu6pQZEW/nC/JIi+S1oUL3pJwCAyi4GLXNQ=",
+        "lastModified": 1620800587,
+        "narHash": "sha256-BGk70gXBXAe9ESnZVVfuUu1OmyiJI1wb8FIm/Pco/7Q=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1c16013bd6e94da748b41cc123c6b509a23eb440",
+        "rev": "4d8dd0afd2d5a35acb5e34c5c7b1674b74173d87",
         "type": "github"
       },
       "original": {
@@ -19,11 +19,11 @@
     "polkadot": {
       "flake": false,
       "locked": {
-        "lastModified": 1620407322,
-        "narHash": "sha256-wakM7eu17lB/3jlLrAkclv0ZflzKf0recaVkqtauYKY=",
+        "lastModified": 1620828228,
+        "narHash": "sha256-DuRgU9gjNpybGDp0ZWu2eDJD9mW/iTl3mB9AZ4wyDeU=",
         "owner": "paritytech",
         "repo": "polkadot",
-        "rev": "78b8cb25992e635c21328b390c6c840e679f471d",
+        "rev": "2c22f3c142f5ce8646ad648cdcc8f39dfae0a1a0",
         "type": "github"
       },
       "original": {
