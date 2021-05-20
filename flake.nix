@@ -2,7 +2,7 @@
   description = "Polkadot overlay";
 
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixpkgs-unstable;
+    nixpkgs.url = github:NixOS/nixpkgs;
     polkadot = {
       url = github:paritytech/polkadot/release;
       flake = false;
