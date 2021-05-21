@@ -1,6 +1,9 @@
 name: Check for update
 
 on:
+  push:
+  # on demand
+  workflow_dispatch:
   schedule:
     - cron: "8 * * * *"
 
