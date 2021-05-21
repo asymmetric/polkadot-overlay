@@ -18,7 +18,5 @@ jobs:
       - name: check if new version is out
         run: |
           mv latest-version prev-version
-          curl -s https://api.github.com/repos/paritytech/polkadot/releases/latest | jq -r .tag_name > latest-version
-          cat prev-version latest-version
           # non-zero if there are differences
-          diff prev-version latest-version
+          curl -s https://api.github.com/repos/paritytech/polkadot/releases/latest | jq -r .tag_name | diff latest-version -
