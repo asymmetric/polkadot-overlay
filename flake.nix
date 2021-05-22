@@ -14,9 +14,11 @@
     overlay = final: prev:
       let
         pkgs = nixpkgs.legacyPackages.${final.system};
-        v = pkgs.lib.strings.fileContents ./latest-version;
-        # remove v
-        version = with builtins; substring 1 (stringLength v) v;
+        version =
+          let
+            v = pkgs.lib.strings.fileContents ./latest-version;
+          in
+          with builtins; substring 1 (stringLength v) v;
         hash = pkgs.lib.strings.fileContents ./hash;
         name = "polkadot-latest";
         src = polkadot;
